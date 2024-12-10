@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="container mx-auto py-10">
+    <div class="flex justify-between items-center mb-5">
+      <h1 class="text-2xl font-bold">SEO Dashboard Energias Limpias</h1>
+      
+      <!-- Filtro de selección -->
+      <div class="w-60">
+        <label for="filter" class="block text-lg font-semibold">Filtrar por:</label>
+        <select id="filter" class="border p-2 rounded-lg w-full mt-2">
+          <option value="volume">Volumen</option>
+          <option value="difficulty">Dificultad</option>
+          <option value="cpc">CPC</option>
+          <option value="trend">Tendencia</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Card de resumen  totales-->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="p-4 bg-white shadow rounded-lg">
+        <h2 class="text-lg font-semibold">Total Keywords</h2>
+        <p id="totalKeywords" class="text-3xl font-bold text-indigo-600">0</p>
+      </div>
+      <div class="p-4 bg-white shadow rounded-lg">
+        <h2 class="text-lg font-semibold">Volumen Total</h2>
+        <p id="totalVolume" class="text-3xl font-bold text-green-600">0</p>
+      </div>
+      <div class="p-4 bg-white shadow rounded-lg">
+        <h2 class="text-lg font-semibold">Dificultad Promedio</h2>
+        <p id="averageDifficulty" class="text-3xl font-bold text-orange-600">0</p>
+      </div>
+      <div class="p-4 bg-white shadow rounded-lg">
+        <h2 class="text-lg font-semibold">Tendencia Promedio</h2>
+        <p id="averageTrend" class="text-3xl font-bold text-purple-600">0</p>
+      </div>
+    </div>
+
+    <!-- Gráfica  barras-->
+    <div class="mb-8 bg-white shadow rounded-lg p-6">
+      <canvas id="keywordsChart"></canvas>
+    </div>
+
+    <div class="bg-white shadow rounded-lg p-6">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr>
+            <th class="border-b px-4 py-2">Keyword</th>
+            <th class="border-b px-4 py-2 volume-column">Volumen</th>
+            <th class="border-b px-4 py-2 difficulty-column">Dificultad</th>
+            <th class="border-b px-4 py-2 cpc-column">CPC</th>
+            <th class="border-b px-4 py-2 trend-column">Tendencia</th>
+          </tr>
+        </thead>
+        <tbody id="keywordsTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>
+
