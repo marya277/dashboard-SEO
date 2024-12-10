@@ -1,4 +1,4 @@
-# SEO Dashboard - Clean Energy Keywords
+# SEO Dashboard - energias limpias Keywords
 
 Este proyecto consiste en la creación de una visualización simple de datos SEO relacionada con el nicho de **energías limpias**. El objetivo principal es mostrar un dashboard que incluya un resumen de métricas y una tabla ordenada de palabras clave por volumen de búsqueda.
 
